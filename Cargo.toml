@@ -1,0 +1,21 @@
+[package]
+name = "hello-world-from-ram"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m-rt = { version = "0.7", features = ["set-sp", "set-vtor"] }
+cortex-m-semihosting = "0.5.0"
+cortex-m = { version = "0.7", features = ["critical-section-single-core", "inline-asm"] }
+defmt = "0.3"
+defmt-rtt = "0.4"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+
+[profile.release]
+codegen-units = 1
+debug = 2
+debug-assertions = false
+incremental = false
+lto = "fat"
+opt-level = "s"
+overflow-checks = false

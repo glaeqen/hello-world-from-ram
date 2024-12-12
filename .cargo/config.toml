@@ -1,0 +1,7 @@
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+runner = "probe-rs run --speed 12000 --chip STM32H743ZI"
+# runner = "probe-rs run --speed 12000 --chip MIMXRT1189CVM8B"
+# runner = "probe-rs run --speed 12000 --chip OL23D0"
+
+[build]
+target = "thumbv6m-none-eabi"
